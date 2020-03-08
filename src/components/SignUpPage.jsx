@@ -37,7 +37,7 @@ export class SignUpPage extends Component {
 
   render() {
     return (
-      <>
+<>
         <Card
           variant='elevation'
           style={{
