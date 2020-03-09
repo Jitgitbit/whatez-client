@@ -15,7 +15,7 @@ class HomePage extends Component {
             height: "200px"
           }}
         >
-          <h2>Welcome to What-Ez</h2>
+          <h2>Welcome to What Ez</h2>
           <div
             style={{
               display: "flex",
