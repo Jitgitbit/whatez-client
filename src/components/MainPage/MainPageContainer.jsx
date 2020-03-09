@@ -2,25 +2,14 @@ import React, {Component} from 'react'
 import MainPageCommonList from './MainPageCommonList'
 import MainPageNotoriousList from './MainPageNotoriousList'
 import MainPageChart from './MainPageChart'
-// import PhotoPageContainer from '../PhotoPage/PhotoPageContainer'
-import { Card, Button } from "@material-ui/core";
+import { connect } from "react-redux";
 
-import { withStyles } from '@material-ui/core/styles';
+// import PhotoPageContainer from '../PhotoPage/PhotoPageContainer'
+import { Button } from "@material-ui/core";
+
 // import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-const styles = theme => ({
-    root: {
-    flexGrow: 1,
-    // height : '100%',
-    // width: '100%'
-  },
-// paper: {
-//   padding: theme.spacing.unit * 2,
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// },
-});
 
 // export default function MainPageContainer() {
 //   return (
@@ -39,10 +28,13 @@ const styles = theme => ({
 
 class MainPageContainer extends Component {
   render() {
-    const { classes } = this.props;
+
+    console.log(`=================================>> PROPS IN MAINPAGE:`,this.props)
+    console.log(`=================================>> HISTORY IN MAINPAGE:`,this.props.history)
+    console.log(`=================================>> STATE IN MAINPAGE:`,this.state)
 
     return (
-      <div className={classes.root}>
+      <div >
         {/* <div>
           <h1>What Ez</h1>
           <hr/>
@@ -76,6 +68,14 @@ class MainPageContainer extends Component {
               Upload a new photo
             </Button>
             <hr/>
+            <Button
+              variant='contained'
+              style={{ marginTop: "10px", width: "400px" }}
+              onClick={() => this.props.history.push("/chart")}
+            >
+              Check your chart
+            </Button>
+            <hr/>
           </Grid>
           <Grid item xs={12}>
             <MainPageChart/>
@@ -86,4 +86,10 @@ class MainPageContainer extends Component {
   }
 }
 
-export default withStyles(styles)(MainPageContainer);
+const mapStateToProps = state => {
+  return {
+    user: state.user.user
+  };
+};
+
+export default connect(mapStateToProps)(MainPageContainer);
