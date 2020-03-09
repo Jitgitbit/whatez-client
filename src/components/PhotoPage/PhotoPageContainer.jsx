@@ -1,10 +1,21 @@
 import React from 'react'
 import UploaderForm from './UploaderForm'
+import { connect } from "react-redux";
 
-export default function PhotoPageContainer() {
+
+function PhotoPageContainer() {
   return (
     <div>
-      <UploaderForm/>
+      <UploaderForm />
     </div>
   )
 }
+
+
+const mapStateToProps = state => {
+  return {
+    user: state.user.user
+  };
+};
+
+export default connect(mapStateToProps)(PhotoPageContainer);

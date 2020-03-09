@@ -77,10 +77,11 @@ class MainPageContainer extends Component {
             </Button>
             <hr/>
           </Grid>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <MainPageChart/>
-          </Grid>
+          </Grid> */}
         </Grid>
+        <MainPageChart/>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import "./App.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 import { connect } from "react-redux";
 
 import HomePage from "./components/HomePage";
@@ -12,7 +12,7 @@ import PhotoPageContainer from "./components/PhotoPage/PhotoPageContainer";
 import ChartPageContainer from "./components/ChartPage/ChartPageContainer";
 
 
-const baseUrl = "http://localhost:5000";
+// const baseUrl = "http://localhost:5000";
 
 
 export class App extends Component {

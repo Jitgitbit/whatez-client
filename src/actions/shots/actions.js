@@ -14,8 +14,7 @@ function createShotSuccess(shot) {
 
 export const createShot = (
 
-  imageUrl,
-  arrayE,
+  fileName,
   history,
   token
 ) => {
@@ -28,8 +27,8 @@ export const createShot = (
       .post(
         "http://localhost:5000/shots/new",
         {
-          user,
-          data: { imageUrl, arrayE }
+          // user: {user},
+          data: { fileName }
         },
         { headers: { Authorization: `Bearer ${token}` } }
       )

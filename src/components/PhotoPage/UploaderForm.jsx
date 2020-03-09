@@ -1,7 +1,11 @@
 import React from 'react'
 import { Card, Button, TextField } from "@material-ui/core";
+import {createShot} from "../../actions/shots/actions"
+import { connect } from "react-redux";
 
-import axios, { post } from 'axios';
+
+// import axios, { post } from 'axios';
+import { post } from 'axios';
 
 class UploaderForm extends React.Component {
 
@@ -17,9 +21,20 @@ class UploaderForm extends React.Component {
 
   onFormSubmit(e){
     e.preventDefault() // Stop form submit
-    this.fileUpload(this.state.file).then((response)=>{
-      console.log(response.data);
-    })
+    this.fileUpload(this.state.file)
+    this.props.createShot(
+      this.state.file.name,
+      this.props.history,
+      this.props.user.token)
+    
+    
+    // .then((response)=>{
+    //   console.log(response.data);
+    // })
+    // this.props.createShot(
+    //   this.state.file.name,
+    //   this.props.history,
+    //   this.props.user.token)
   }
 
   onChange(e) {
@@ -29,11 +44,12 @@ class UploaderForm extends React.Component {
   fileUpload(file){
     const url = "http://localhost:5000/shots/new";
     const formData = new FormData();
-    console.log({ file })
+    console.log(`LOGGING THE FILE:`, file.name )
+    this.setState({file: file})
     formData.append('file', file)
     console.log({ formData })
 
-    return post(url,formData, {})
+    return  post(url,formData, {})
   }
 //action="/upload" for the form?
   render() {
@@ -99,6 +115,10 @@ class UploaderForm extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    user: state.user.user
+  };
+};
 
-
-export default UploaderForm
+export default connect(mapStateToProps, {createShot})(UploaderForm);
