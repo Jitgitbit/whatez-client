@@ -20,7 +20,7 @@ export const createShot = (
 ) => {
   return async function(dispatch, getState) {
     
-    const user = { ...getState().user.user };
+    // const user = { ...getState().user.user };
     console.log("TOKEN: ", token);
 
     axios

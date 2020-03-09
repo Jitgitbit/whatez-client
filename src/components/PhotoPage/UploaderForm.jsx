@@ -3,8 +3,6 @@ import { Card, Button, TextField } from "@material-ui/core";
 import {createShot} from "../../actions/shots/actions"
 import { connect } from "react-redux";
 
-
-// import axios, { post } from 'axios';
 import { post } from 'axios';
 
 class UploaderForm extends React.Component {
@@ -27,14 +25,6 @@ class UploaderForm extends React.Component {
       this.props.history,
       this.props.user.token)
     
-    
-    // .then((response)=>{
-    //   console.log(response.data);
-    // })
-    // this.props.createShot(
-    //   this.state.file.name,
-    //   this.props.history,
-    //   this.props.user.token)
   }
 
   onChange(e) {
