@@ -1,4 +1,5 @@
 import axios from "axios";
+axios.defaults.timeout = 60000;
 
 export const SHOT_CREATE_SUCCESS = "SHOT_CREATE_SUCCESS";
 export const FETCH_SHOTS_SUCCESS = "FETCH_SHOTS_SUCCESS";
@@ -30,10 +31,14 @@ export const createShot = (
           // user: {user},
           data: { fileName }
         },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` }},
+        // { headers: { Authorization: `Bearer ${token}` , timeout: 60000}},
       )
       .then(resp => {
+        console.log(`RESPONSE DATA AT CREATE SHOT:`,resp.data)
+
         dispatch(createShotSuccess(resp.data));
+        console.log(`RESPONSE DATA AT CREATE SHOT:`,resp.data)
         console.log("HISTORY:", history);
         history.push("/shots");
         console.log("SHOT CREATION SUCCESSFUL", resp.data);

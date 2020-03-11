@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 
 function PhotoPageContainer() {
+  
   return (
     <div>
       <UploaderForm />
@@ -14,7 +15,9 @@ function PhotoPageContainer() {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    shot: state.shot,
+    history: state.history
   };
 };
 

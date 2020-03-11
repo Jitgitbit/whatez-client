@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import MainPageCommonList from './MainPageCommonList'
 import MainPageNotoriousList from './MainPageNotoriousList'
+import {getShots} from "../../actions/shots/actions"
 import MainPageChart from './MainPageChart'
 import { connect } from "react-redux";
 
@@ -64,8 +65,19 @@ class MainPageContainer extends Component {
               variant='contained'
               style={{ marginTop: "10px", width: "400px" }}
               onClick={() => this.props.history.push("/photo")}
+              history={this.props.history}
             >
               Upload a new photo
+            </Button>
+            <hr/>
+            <Button
+              variant='contained'
+              style={{ marginTop: "10px", width: "400px" }}
+              // onClick={() => this.props.history.push("/photo")}
+              onClick={() => this.props.getShots()}
+              history={this.props.history}
+            >
+              Load your shots
             </Button>
             <hr/>
             <Button
@@ -74,6 +86,14 @@ class MainPageContainer extends Component {
               onClick={() => this.props.history.push("/chart")}
             >
               Check your chart
+            </Button>
+            <hr/>
+            <Button
+              variant='contained'
+              style={{ marginTop: "10px", width: "400px" }}
+              onClick={() => this.props.history.push("/login")}
+            >
+              Change user
             </Button>
             <hr/>
           </Grid>
@@ -89,7 +109,9 @@ class MainPageContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    shot: state.shot,
+    // history: state.history
   };
 };
 

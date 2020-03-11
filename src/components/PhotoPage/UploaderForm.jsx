@@ -2,6 +2,8 @@ import React from 'react'
 import { Card, Button, TextField } from "@material-ui/core";
 import {createShot} from "../../actions/shots/actions"
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+
 
 import { post } from 'axios';
 
@@ -24,7 +26,8 @@ class UploaderForm extends React.Component {
       this.state.file.name,
       this.props.history,
       this.props.user.token)
-    
+    console.log(`PROPS HERE ARE:`,this.props)
+    // this.props.history.push("/main")
   }
 
   onChange(e) {
@@ -88,14 +91,18 @@ class UploaderForm extends React.Component {
                 width: "100px"
               }}
             >
+              {/* <Link className="nav-link" to={`/main`} style={{color:"white", textDecoration:"none"}}> */}
               Upload
+              {/* </Link> */}
             </Button>
             <Button
               variant='contained'
               style={{ marginTop: "10px", width: "100px" }}
-              onClick={() => this.props.history.push("/main")}
+              // onClick={() => this.props.history.push("/main")}
             >
+              <Link className="nav-link" to={`/main`} style={{color:"black", textDecoration:"none"}}>
               Cancel
+              </Link>
             </Button>
           </div>
         </form>
@@ -107,7 +114,9 @@ class UploaderForm extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    shot: state.shot,
+    history: state.history
   };
 };
 
