@@ -18,7 +18,7 @@ const data = [
   { E: 'E380', bought: 2 },
   { E: 'E270', bought: 55 },
 ];
-export default class ChartActualRepresentation extends React.PureComponent {
+export default class ChartForAdditives extends React.PureComponent {
   constructor(props) {
     super(props);
 

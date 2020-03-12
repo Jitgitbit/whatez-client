@@ -1,5 +1,5 @@
-import { LOGIN_SUCCES } from "../../actions/users/actions";
-import { SIGNUP_SUCCES } from "../../actions/users/actions";
+import { LOGIN_SUCCES } from "../actions/usersActions";
+import { SIGNUP_SUCCES } from "../actions/usersActions";
 
 const initialState = {
   //   users: [],

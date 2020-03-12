@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { userLogin } from "../actions/users/actions";
+import { userLogin } from "../actions/usersActions";
 import { withRouter } from "react-router";
 import { Card, Button, TextField } from "@material-ui/core";
 

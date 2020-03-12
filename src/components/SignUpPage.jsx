@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { userSignUp } from "../actions/users/actions";
+import { userSignUp } from "../actions/usersActions";
 import { Card, Button, TextField } from "@material-ui/core";
 
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import MainPageCommonList from './MainPageCommonList'
 import MainPageNotoriousList from './MainPageNotoriousList'
-import {getShots} from "../../actions/shots/actions"
+import {getShots} from "../../actions/shotsActions"
 import MainPageChart from './MainPageChart'
 import { connect } from "react-redux";
 

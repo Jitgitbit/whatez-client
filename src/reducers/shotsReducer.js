@@ -1,4 +1,4 @@
-import { SHOT_CREATE_SUCCESS, FETCH_SHOTS_SUCCESS } from "../../actions/shots/actions";
+import { SHOT_CREATE_SUCCESS, FETCH_SHOTS_SUCCESS } from "../actions/shotsActions";
 
 
 export default (state = [], action = {}) => {
