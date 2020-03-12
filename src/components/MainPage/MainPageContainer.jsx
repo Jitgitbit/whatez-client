@@ -4,6 +4,7 @@ import MainPageNotoriousList from './MainPageNotoriousList'
 import {getShots} from "../../actions/shotsActions"
 import MainPageChart from './MainPageChart'
 import { connect } from "react-redux";
+import NavBar from './NavBar';
 
 // import PhotoPageContainer from '../PhotoPage/PhotoPageContainer'
 import { Button } from "@material-ui/core";
@@ -41,6 +42,8 @@ class MainPageContainer extends Component {
         </div> */}
         <Grid container spacing={24}>
           <Grid item xs={12}>
+          <NavBar/>
+
             <h3>What Ez</h3>
           </Grid>
           <Grid item xs={2}>
