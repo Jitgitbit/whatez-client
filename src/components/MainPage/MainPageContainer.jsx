@@ -32,7 +32,6 @@ class MainPageContainer extends Component {
 
     console.log(`=================================>> PROPS IN MAINPAGE:`,this.props)
     console.log(`=================================>> HISTORY IN MAINPAGE:`,this.props.history)
-    console.log(`=================================>> STATE IN MAINPAGE:`,this.state)
 
     return (
       <div >
