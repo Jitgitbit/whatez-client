@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.timeout = 60000;
+// axios.defaults.timeout = 60000;
 
 export const SHOT_CREATE_SUCCESS = "SHOT_CREATE_SUCCESS";
 export const FETCH_SHOTS_SUCCESS = "FETCH_SHOTS_SUCCESS";
