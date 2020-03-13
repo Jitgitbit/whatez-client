@@ -13,9 +13,11 @@ export default class AdditivesCategories extends Component {
       "method":"GET",
       "url":"https://vx-e-additives.p.rapidapi.com/additives",
       "headers":{
+        // 'Access-Control-Allow-Origin': '*',
       "content-type":"application/octet-stream",
       "x-rapidapi-host":"vx-e-additives.p.rapidapi.com",
-      "x-rapidapi-key":"592be0ac5emsh1f2a31abf42d2e4p15ee76jsnf519e97b2684"
+      "x-rapidapi-key":"592be0ac5emsh1f2a31abf42d2e4p15ee76jsnf519e97b2684",          // CORS Policy messing it up. Sometimes fetching, sometimes not.
+      // 'Access-Control-Allow-Origin': '*'
       },"params":{
       "sort":"name"
       }
