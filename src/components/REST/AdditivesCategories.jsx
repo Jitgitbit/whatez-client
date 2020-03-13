@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import NavBar from './NavBar'
+import NavBar from '../NavBar'
 
-// const axios = require("axios");
 
 export default class AdditivesCategories extends Component {
   state ={
-    additiveCategories: [ ]
+    additivesCategories: [ ]
   }
   componentDidMount(){
     axios({
       "method":"GET",
-      "url":"https://vx-e-additives.p.rapidapi.com/categories",
+      "url":"https://vx-e-additives.p.rapidapi.com/additives",
       "headers":{
       "content-type":"application/octet-stream",
       "x-rapidapi-host":"vx-e-additives.p.rapidapi.com",
@@ -22,9 +21,9 @@ export default class AdditivesCategories extends Component {
       }
       })
       .then(response => {
-        console.log(`=========>> logging response from get in home:`,response)
+        console.log(`=========>> logging response from get in Categories:`,response)
         this.setState({
-          additiveCategories: response.data.slice(0, 10)
+          additivesCategories: response.data.slice(0, 10)
         })
       })
       .catch((error)=>{
@@ -32,17 +31,17 @@ export default class AdditivesCategories extends Component {
       })    
   }
   render() {
-    const {additiveCategories} = this.state;
-    const additiveCategoryList = additiveCategories.length ? (
-      additiveCategories.map(additiveCategory => {
+    const {additivesCategories} = this.state;
+    const additivesCategoryList = additivesCategories.length ? (
+      additivesCategories.map(additivesCategory => {
         return (
-          <div className="additiveCategory card teal lighten-5" key={additiveCategory.id}>
+          <div className="additivesCategory card teal lighten-5" key={additivesCategory.id}>
             <div className="card-content ">
-              <Link to={'/info/' + additiveCategory.id}>
-                <span className="card-title red-text">E {additiveCategory.category}'s</span>
+              <Link to={'/info/' + additivesCategory.id}>
+                <span className="card-title red-text">E {additivesCategory.category}'s</span>
               </Link>
-              <p>{additiveCategory.name}</p>
-              <p className="right">additives: {additiveCategory.additives}</p>
+              <p>{additivesCategory.name}</p>
+              <p className="right">additives: {additivesCategory.additives}</p>
             </div>
           </div>
         )
@@ -53,9 +52,9 @@ export default class AdditivesCategories extends Component {
     return (
       <div>
         <NavBar/>
-          <div className='container additiveCategories '>
+          <div className='container additivesCategories '>
             <h4 className="center">Additive Categories</h4>
-            {additiveCategoryList}
+            {additivesCategoryList}
           </div>
       </div>
     )
