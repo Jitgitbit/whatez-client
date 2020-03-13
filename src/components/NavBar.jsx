@@ -15,6 +15,7 @@ function NavBar(props) {
           <li><NavLink to="/chart">Your chart</NavLink></li> 
           <li><NavLink to="/info">Info</NavLink></li>
           <li><Link to="/">Log out</Link></li> 
+          <li><Link to="/main">ALT</Link></li> 
         </ul>
       </div>
     </nav>
