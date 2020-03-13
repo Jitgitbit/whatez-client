@@ -3,6 +3,9 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import NavBar from '../NavBar'
 
+const cors = require("cors");
+const corsMiddleware = cors();
+
 
 export default class AdditivesCategories extends Component {
   state ={
