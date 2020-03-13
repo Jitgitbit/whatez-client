@@ -1,8 +1,3 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import NavBar from '../NavBar'
-
 const express = require('express');
 const request = require('request');
 
@@ -26,60 +21,5 @@ app.get('/jokes/random', (req, res) => {
   )
 });
 
-export default class AdditivesCategories extends Component {
-  state ={
-    additivesCategories: [ ]
-  }
-  componentDidMount(){
-    axios({
-      "method":"GET",
-      "url":"https://vx-e-additives.p.rapidapi.com/additives",
-      "headers":{
-        'Access-Control-Allow-Origin': '*',
-      "content-type":"application/octet-stream",
-      "x-rapidapi-host":"vx-e-additives.p.rapidapi.com",
-      "x-rapidapi-key":"592be0ac5emsh1f2a31abf42d2e4p15ee76jsnf519e97b2684"
-      },"params":{
-      "sort":"name"
-      }
-      })
-      .then(response => {
-        console.log(`=========>> logging response from get in Categories:`,response)
-        this.setState({
-          additivesCategories: response.data.slice(0, 10)
-        })
-      })
-      .catch((error)=>{
-        console.log(error)
-      })    
-  }
-  render() {
-    const {additivesCategories} = this.state;
-    const additivesCategoryList = additivesCategories.length ? (
-      additivesCategories.map(additivesCategory => {
-        return (
-          <div className="additivesCategory card teal lighten-5" key={additivesCategory.id}>
-            <div className="card-content ">
-              <Link to={'/info/' + additivesCategory.id}>
-                <span className="card-title red-text">E {additivesCategory.category}'s</span>
-              </Link>
-              <p>{additivesCategory.name}</p>
-              <p className="right">additives: {additivesCategory.additives}</p>
-            </div>
-          </div>
-        )
-      })
-    ) : (
-      <div className="center">No additive categories loaded yet</div>
-    )
-    return (
-      <div>
-        <NavBar/>
-          <div className='container additivesCategories '>
-            <h4 className="center">Additive Categories</h4>
-            {additivesCategoryList}
-          </div>
-      </div>
-    )
-  }
-}
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`listening on ${PORT}`));

@@ -12,6 +12,7 @@ export default class AdditivesCategories extends Component {
     axios({
       "method":"GET",
       "url":"https://vx-e-additives.p.rapidapi.com/additives",
+      // "crossdomain": 'true' ,
       "headers":{
         // 'Access-Control-Allow-Origin': '*',
       "content-type":"application/octet-stream",
