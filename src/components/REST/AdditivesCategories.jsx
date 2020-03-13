@@ -6,15 +6,17 @@ import NavBar from '../NavBar'
 const cors = require("cors");
 const corsMiddleware = cors();
 
+// const axios = require("axios")
 
 export default class AdditivesCategories extends Component {
   state ={
     additivesCategories: [ ]
   }
   componentDidMount(){
+    // axios.use(cors())
     axios({
       "method":"GET",
-      "url":"https://vx-e-additives.p.rapidapi.com/additives",
+      "url":"https://vx-e-additives.p.rapidapi.com/categories",
       // "crossdomain": 'true' ,
       "headers":{
         // 'Access-Control-Allow-Origin': '*',
