@@ -7,6 +7,7 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 
 import { Animation } from '@devexpress/dx-react-chart';
+import NavBar from './NavBar';
 
 const data = [
   { E: 'E400', bought: 12 },
@@ -32,21 +33,22 @@ export default class ChartForAdditives extends React.PureComponent {
 
     return (
       <div>
-      <h1>What Ez</h1>
-      <Paper style={{width: 500}}>
-        <Chart
-          data={chartData}
-        >
-          <PieSeries
-            valueField="bought"
-            argumentField="E"
-          />
-          <Title
-            text="Ez consumed"
-          />
-          <Animation />
-        </Chart>
-      </Paper>
+      <NavBar/>
+        <h1>What Ez</h1>
+        <Paper style={{width: 500}}>
+          <Chart
+            data={chartData}
+          >
+            <PieSeries
+              valueField="bought"
+              argumentField="E"
+            />
+            <Title
+              text="Ez consumed"
+            />
+            <Animation />
+          </Chart>
+        </Paper>
       </div>
     );
   }

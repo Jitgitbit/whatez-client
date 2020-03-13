@@ -4,7 +4,7 @@ import MainPageNotoriousList from './MainPageNotoriousList'
 import {getShots} from "../../actions/shotsActions"
 import MainPageChart from './MainPageChart'
 import { connect } from "react-redux";
-import NavBar from './NavBar';
+import NavBar from '../NavBar';
 
 // import PhotoPageContainer from '../PhotoPage/PhotoPageContainer'
 import { Button } from "@material-ui/core";

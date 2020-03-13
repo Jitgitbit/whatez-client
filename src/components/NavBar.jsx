@@ -9,11 +9,12 @@ function NavBar(props) {
   return (
     <nav className='nav-wrapper red darken-3'>
       <div className='container'>
-        <a className="brand-logo">What Ez</a>
+        <a className="brand-logo left">What Ez</a>
         <ul className='right'>
-          <li><Link to="/">Log out</Link></li>
           <li><NavLink to="/photo">Upload photo</NavLink></li>
           <li><NavLink to="/chart">Your chart</NavLink></li> 
+          <li><NavLink to="/info">Info</NavLink></li>
+          <li><Link to="/">Log out</Link></li> 
         </ul>
       </div>
     </nav>

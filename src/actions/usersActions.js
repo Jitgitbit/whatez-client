@@ -27,7 +27,7 @@ export function userLogin(email, password, history) {
       .post("http://localhost:5000/user/login", { email, password })
       .then(resp => {
         dispatch(loginSucces(resp.data));
-        history.push("/main");
+        history.push("/info");
         console.log("LOGIN SUCCESSFUL");
       })
       .catch(error => console.error("error", error));

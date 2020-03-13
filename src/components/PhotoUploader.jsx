@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 import { post } from 'axios';
+import NavBar from './NavBar';
 
 class PhotoUploader extends React.Component {
 
@@ -53,6 +54,7 @@ class PhotoUploader extends React.Component {
       //   <button type="submit">Upload</button>
       // </form>
       <>
+      <NavBar/>
       <Card
         variant='elevation'
         style={{
