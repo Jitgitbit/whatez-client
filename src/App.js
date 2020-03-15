@@ -23,7 +23,7 @@ export class App extends Component {
       <div>
       {/* <div className="App"> */}
         <BrowserRouter>
-          {/* <Switch> */}
+          <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/login" component={LogInPage} />
@@ -32,7 +32,7 @@ export class App extends Component {
             <Route exact path="/main" component={MainPageContainer}/>
             <Route exact path="/photo" component={PhotoUploader}/>
             <Route exact path="/chart" component={ChartForAdditives}/>
-          {/* </Switch> */}
+          </Switch>
         </BrowserRouter>
       </div>
     );
