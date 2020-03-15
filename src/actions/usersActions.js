@@ -19,9 +19,14 @@ function loginSucces(resp) {
 }
 
 export function userLogin(email, password, history) {
-  console.log(`
+  console.log(
+    `
   --  LOGGING IN  --
-  `);
+  `,
+    email,
+    password
+  );
+
   return (dispatch, getState) => {
     axios
       .post("http://localhost:5000/user/login", { email, password })
@@ -57,9 +62,7 @@ export function userSignUp(username, email, password) {
   return (dispatch, getState) => {
     axios
       .post("http://localhost:5000/user/signup", { username, email, password })
-      .then((
-        resp 
-      ) => dispatch(signUpSucess(resp.data)))
+      .then(resp => dispatch(signUpSucess(resp.data)))
       .catch(error => console.error("error", error));
   };
 }

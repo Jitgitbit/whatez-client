@@ -4,7 +4,6 @@ import { userLogin } from "../actions/usersActions";
 import { withRouter } from "react-router";
 import { Card, Button, TextField } from "@material-ui/core";
 
-
 export class LogInPage extends Component {
   state = {
     email: "",
@@ -15,22 +14,17 @@ export class LogInPage extends Component {
     event.preventDefault();
     const { email, password } = this.state;
     console.log("this.state", this.state);
-    console.log(
-      "what is props dispatch in handleSubmit:",
-      this.props.dispatch
-    );
+    console.log("what is props dispatch in handleSubmit:", this.props.dispatch);
     await this.props.dispatch(userLogin(email, password, this.props.history));
     console.log("handleSubmit-Login: ", this.props.user);
   };
 
   handleChange = event => {
     const { value } = event.target;
-    console.log("value in handleChange:", value);
-    console.log(event);
+    console.log("state is:", this.state);
     this.setState({
       [event.target.name]: event.target.value
     });
-    console.log("state is:", this.state);
   };
 
   render() {
