@@ -71,20 +71,33 @@ export class ChartForAdditives extends Component {
 
   render() {
     // console.log('SHOTS in chartpage:',this.props.shots)
-    const allShots = this.props.shots;
-    const shotsList = allShots.map(shot => {
+    const allShotsRaw = this.props.shots;
+    const shotsList = allShotsRaw.map((shot, key) => {
+      // return(
+      //   <ul key={shot.id}>
+      //     <li>{shot.arrayE}</li>
+      //   </ul>
+      // )
+      return shot.arrayE
+    })
+    // const allShotsMerged = Array.prototype.flat(allShotsRaw)
+    const allShotsMerged = [].concat.apply([], shotsList);
+    const additivesList = allShotsMerged.map((addi, key) => {
       return(
-        <ul>
-          <li>{shot.arrayE}</li>
+        <ul key={addi.key}>
+          <li>{addi}</li>
         </ul>
       )
     })
     console.log('SHOTS in chartpage:',shotsList)
+    console.log('ADDITIVES in chartpage:',allShotsMerged)
+
     return (
       <div>
         <h1 style={{color:'green'}}>Ez listed</h1>
         <ul>
-          <li>{shotsList}</li>
+          {/* <li>{shotsList}</li> */}
+          <li>{additivesList}</li>
         </ul>
       </div>
     );
