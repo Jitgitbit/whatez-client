@@ -26,7 +26,7 @@ export const createShot = (formData, history) => {
       .then(resp => {
         dispatch(createShotSuccess(resp.data));
         console.log("SHOT CREATION SUCCESSFUL", resp.data);
-        history.push("/shots");
+        history.push("/chart");
       })
       .catch(error => console.error("error", error));
   };
