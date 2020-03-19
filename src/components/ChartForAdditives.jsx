@@ -55,33 +55,8 @@
 //     );
 //   }
 // }
-// import React from 'react'
-// import { connect } from "react-redux";
-// import { getShots } from "../actions/shotsActions";
-
-
-
-// function ChartForAdditives({shot, getShots}) {
-//   // const whatisit = getShots()
-//   // const peopleArray = Object.keys(peopleObj).map(i => peopleObj[i])
-//   const additiveArray = Object.values(getShots()).map(i => getShots()[i])
-//   console.log(additiveArray)
-//   console.log(shot)
-//   return (
-//     <div>
-//       What are the props:{additiveArray}
-//     </div>
-//   )
-// }
-
-// const mapStateToProps = state => {
-//   return {
-//     user: state.user.user,
-//     shot: state.shot
-//   };
-// };
-
 // export default connect(mapStateToProps, {getShots})(ChartForAdditives);
+
 import React, { Component } from "react";
 import { getShots } from "../actions/shotsActions";
 import { connect } from "react-redux";
@@ -89,22 +64,28 @@ import { connect } from "react-redux";
 
 export class ChartForAdditives extends Component {
 
-  // displayEvents = eventList => {
-  //   console.log("EVENTLIST", eventList);
-  //   return eventList.map(eventItem => {
-  //     return <EventCards eventObj={eventItem} />;
-  //   });
-  // };
-
   componentDidMount() {
     this.props.dispatch(getShots());
-    
+    // console.log(this.props)
   }
 
   render() {
+    // console.log('SHOTS in chartpage:',this.props.shots)
+    const allShots = this.props.shots;
+    const shotsList = allShots.map(shot => {
+      return(
+        <ul>
+          <li>{shot.arrayE}</li>
+        </ul>
+      )
+    })
+    console.log('SHOTS in chartpage:',shotsList)
     return (
-      <div class="album py-5 bg-dark">
+      <div>
         <h1 style={{color:'green'}}>Ez listed</h1>
+        <ul>
+          <li>{shotsList}</li>
+        </ul>
       </div>
     );
   }
@@ -113,7 +94,7 @@ export class ChartForAdditives extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user.user,
-    shot: state.shot
+    shots: state.shots
   };
 };
 
