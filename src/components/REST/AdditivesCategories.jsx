@@ -3,8 +3,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import NavBar from '../NavBar'
 
-const cors = require("cors");
-const corsMiddleware = cors();
+// const cors = require("cors");
+// const corsMiddleware = cors();
 
 // const axios = require("axios")
 

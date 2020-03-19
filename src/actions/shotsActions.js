@@ -26,6 +26,7 @@ export const createShot = (formData, history) => {
       .then(resp => {
         dispatch(createShotSuccess(resp.data));
         console.log("SHOT CREATION SUCCESSFUL", resp.data);
+        console.log("THIS SHOT'S ARRAY:", resp.data.arrayE)
         history.push("/chart");
       })
       .catch(error => console.error("error", error));
@@ -39,7 +40,8 @@ export const getShots = () => {
       // .get("http://localhost:4000/shots?page=1&limit=3")
       .then(resp => {
         dispatch(fetchShotSuccess(resp.data));
-        console.log("GET ALL SHOTS SUCCESSFULL: ", resp.data);
+        console.log("GET ALL SHOTS DATA SUCCESSFULL: ", resp.data);
+        // console.log("GET ALL SHOTS ARRAY SUCCESSFULL: ", resp.data.arrayE);
       })
       .catch(error => console.error("error", error));
   };

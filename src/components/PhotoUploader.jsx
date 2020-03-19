@@ -4,7 +4,7 @@ import { createShot } from "../actions/shotsActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { post } from "axios";
+// import { post } from "axios";
 import NavBar from "./NavBar";
 
 class PhotoUploader extends React.Component {
