@@ -9,7 +9,7 @@ export class ChartForAdditives extends Component {
 
   componentDidMount() {
     this.props.dispatch(getShots());
-    // console.log(this.props)
+    // console.log(this.props)            // no shots yet at this point in time !
   }
 
   render() {
@@ -35,6 +35,9 @@ export class ChartForAdditives extends Component {
     // console.log('SHOTS in chartpage:',shotsList)
     console.log('ADDITIVES in chartpage:',allShotsMerged)
 
+    const randomColorOne = Math.floor(Math.random()*16777215).toString(16);
+    const randomColorTwo = Math.floor(Math.random()*16777215).toString(16);
+
     return (
       <div>
         <h1 style={{color:'green'}}>Ez listed:</h1>
@@ -43,8 +46,8 @@ export class ChartForAdditives extends Component {
           <li style={{marginLeft:'200px'}}>{additivesList}</li>
           <PieChart
           data={[
-            { title: 'One', value: 10, color: '#E38627' },
-            { title: 'Two', value: 15, color: '#C13C37' },
+            { title: 'One', value: 10, color: '#' + randomColorOne },
+            { title: 'Two', value: 15, color: '#' + randomColorTwo },
             { title: 'Three', value: 20, color: '#6A2135' },
           ]}
           />;
