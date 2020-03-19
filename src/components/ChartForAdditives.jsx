@@ -80,16 +80,15 @@ export class ChartForAdditives extends Component {
       // )
       return shot.arrayE
     })
-    // const allShotsMerged = Array.prototype.flat(allShotsRaw)
     const allShotsMerged = [].concat.apply([], shotsList);
-    const additivesList = allShotsMerged.map((addi, key) => {
+    const additivesList = allShotsMerged.map((addi, index) => {
       return(
-        <ul key={addi.key}>
+        <ul key={index}>
           <li>{addi}</li>
         </ul>
       )
     })
-    console.log('SHOTS in chartpage:',shotsList)
+    // console.log('SHOTS in chartpage:',shotsList)
     console.log('ADDITIVES in chartpage:',allShotsMerged)
 
     return (
