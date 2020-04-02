@@ -19,8 +19,7 @@ function loginSucces(resp) {
 }
 
 export function userLogin(email, password, history) {
-  console.log(
-    `
+  console.log(`
   --  LOGGING IN  --
   `,
     email,
@@ -37,6 +36,13 @@ export function userLogin(email, password, history) {
       })
       .catch(error => console.error("error", error));
   };
+}
+
+export const signOut = () => {
+  return (dispatch, getState, {getFirebase}) => {
+    const firebase = getFirebase();
+    firebase.auth().signOut().then(() => { dispatch({type:'SIGNOUT_SUCCESS'})});
+  }
 }
 
 function signUpSucess(resp) {
