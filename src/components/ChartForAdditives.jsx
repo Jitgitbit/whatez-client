@@ -16,11 +16,7 @@ export class ChartForAdditives extends Component {
     // console.log('SHOTS in chartpage:',this.props.shots)
     const allShotsRaw = this.props.shots;
     const shotsList = allShotsRaw.map((shot, key) => {
-      // return(
-      //   <ul key={shot.id}>
-      //     <li>{shot.arrayE}</li>
-      //   </ul>
-      // )
+     
       return shot.arrayE
     })
     const allShotsMerged = [].concat.apply([], shotsList);
