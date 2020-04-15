@@ -40,7 +40,7 @@ export class ChartForAdditives extends Component {
 
     return (
       <div>
-        <h1 style={{color:'green'}}>Your E-additives charted:</h1>
+        <h1>Your E-additives charted:</h1>
         {/* <ul>
           <li style={{marginLeft:'200px'}}>{additivesList}</li>
         </ul> */}

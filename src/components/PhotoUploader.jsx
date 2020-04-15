@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, TextField } from "@material-ui/core";
+// import { Card, Button, TextField } from "@material-ui/core";
 import { createShot } from "../actions/shotsActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -32,72 +32,73 @@ class PhotoUploader extends React.Component {
   render() {
     console.log("props", this.props);
     return (
+      <div></div>
       // <form onSubmit={this.onFormSubmit} method="POST" encType="multipart/form-data">
       //   <h3>Img Upload</h3>
       //   <input type="file" onChange={this.onChange} name="avatar"/>
       //   <button type="submit">Upload</button>
       // </form>
-      <>
-        <Card
-          variant='elevation'
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            padding: "30px",
-            width: "400px",
-            height: "200px"
-          }}
-        >
-          <h4>Img Upload</h4>
-          <form
-            noValidate
-            onSubmit={this.onFormSubmit}
-            method='POST'
-            encType='multipart/form-data'
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center"
-            }}
-          >
-            <TextField
-              onChange={this.onChange}
-              type='file'
-              name='avatar'
-              variant='filled'
-            />
-            <div style={{ display: "flex" }}>
-              <Button
-                variant='contained'
-                color='primary'
-                type='submit'
-                style={{
-                  marginRight: "10px",
-                  marginTop: "10px",
-                  width: "100px"
-                }}
-              >
-                {/* <Link className="nav-link" to={`/main`} style={{color:"white", textDecoration:"none"}}> */}
-                Upload
-                {/* </Link> */}
-              </Button>
-              <Button
-                variant='contained'
-                style={{ marginTop: "10px", width: "100px" }}
-                // onClick={() => this.props.history.push("/main")}
-              >
-                <Link
-                  className='nav-link'
-                  to={`/main`}
-                  style={{ color: "black", textDecoration: "none" }}
-                >
-                  Cancel
-                </Link>
-              </Button>
-            </div>
-          </form>
-        </Card>
-      </>
+      // <>
+      //   <Card
+      //     variant='elevation'
+      //     style={{
+      //       display: "flex",
+      //       flexDirection: "column",
+      //       padding: "30px",
+      //       width: "400px",
+      //       height: "200px"
+      //     }}
+      //   >
+      //     <h4>Img Upload</h4>
+      //     <form
+      //       noValidate
+      //       onSubmit={this.onFormSubmit}
+      //       method='POST'
+      //       encType='multipart/form-data'
+      //       style={{
+      //         display: "flex",
+      //         flexDirection: "column",
+      //         alignItems: "center"
+      //       }}
+      //     >
+      //       <TextField
+      //         onChange={this.onChange}
+      //         type='file'
+      //         name='avatar'
+      //         variant='filled'
+      //       />
+      //       <div style={{ display: "flex" }}>
+      //         <Button
+      //           variant='contained'
+      //           color='primary'
+      //           type='submit'
+      //           style={{
+      //             marginRight: "10px",
+      //             marginTop: "10px",
+      //             width: "100px"
+      //           }}
+      //         >
+      //           {/* <Link className="nav-link" to={`/main`} style={{color:"white", textDecoration:"none"}}> */}
+      //           Upload
+      //           {/* </Link> */}
+      //         </Button>
+      //         <Button
+      //           variant='contained'
+      //           style={{ marginTop: "10px", width: "100px" }}
+      //           // onClick={() => this.props.history.push("/main")}
+      //         >
+      //           <Link
+      //             className='nav-link'
+      //             to={`/main`}
+      //             style={{ color: "black", textDecoration: "none" }}
+      //           >
+      //             Cancel
+      //           </Link>
+      //         </Button>
+      //       </div>
+      //     </form>
+      //   </Card>
+      // </>
     );
   }
 }
