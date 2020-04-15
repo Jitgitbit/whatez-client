@@ -23,7 +23,7 @@ export class SignUpPage extends Component {
 
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.id]: event.target.value             // !!! NOT .name  ,  event.target.id  !!!!  see in the Materialize rendered !!±!
     });
   };
 

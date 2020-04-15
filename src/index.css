@@ -32,4 +32,3 @@ textarea.materialize-textarea:focus:not([readonly]){
 .input-field {
   z-index: 9999!important;
 }
-/* .input-field label { pointer-events: all; } */

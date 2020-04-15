@@ -2,7 +2,7 @@ import React from "react";
 // import { Card, Button, TextField } from "@material-ui/core";
 import { createShot } from "../actions/shotsActions";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // import { post } from "axios";
 
