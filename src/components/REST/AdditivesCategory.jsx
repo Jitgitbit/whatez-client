@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import NavBar from '../NavBar'
 
 export default class AdditivesCategory extends Component {
   state ={
@@ -43,7 +42,6 @@ export default class AdditivesCategory extends Component {
     )
     return (
       <div>
-        <NavBar/>
         <div className='container'>
           {additivesCategory}
         </div>

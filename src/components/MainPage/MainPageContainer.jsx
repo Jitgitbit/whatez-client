@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
 import MainPageCommonList from './MainPageCommonList'
 import MainPageNotoriousList from './MainPageNotoriousList'
-import {getShots} from "../../actions/shotsActions"
-import MainPageChart from './MainPageChart'
 import { connect } from "react-redux";
-import NavBar from '../NavBar';
 
 // import PhotoPageContainer from '../PhotoPage/PhotoPageContainer'
 import { Button } from "@material-ui/core";
@@ -42,7 +39,6 @@ class MainPageContainer extends Component {
         </div> */}
         <Grid container spacing={24}>
           <Grid item xs={12}>
-          <NavBar/>
 
             <h3>What Ez</h3>
           </Grid>
@@ -103,7 +99,6 @@ class MainPageContainer extends Component {
             <MainPageChart/>
           </Grid> */}
         </Grid>
-        <MainPageChart/>
       </div>
     );
   }

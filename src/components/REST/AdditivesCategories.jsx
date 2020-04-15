@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import NavBar from '../NavBar'
 
 // const cors = require("cors");
 // const corsMiddleware = cors();
@@ -59,7 +58,6 @@ export default class AdditivesCategories extends Component {
     )
     return (
       <div>
-        <NavBar/>
           <div className='container additivesCategories '>
             <h4 className="center">Additive Categories</h4>
             {additivesCategoryList}

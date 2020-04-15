@@ -9,7 +9,7 @@ function NavBar(props) {
   return (
     <nav className='nav-wrapper red darken-3'>
       <div className='container'>
-        <a className="brand-logo left">What Ez</a>
+        {/* <a className="brand-logo left">What Ez</a> */}
         <ul className='right'>
           <li><NavLink to="/photo">Upload photo</NavLink></li>
           <li><NavLink to="/chart">Your chart</NavLink></li> 

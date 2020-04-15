@@ -20,7 +20,7 @@ export class LogInPage extends Component {
   };
 
   handleChange = event => {
-    const { value } = event.target;
+    // const { value } = event.target;
     console.log("state is:", this.state);
     this.setState({
       [event.target.name]: event.target.value

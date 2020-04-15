@@ -18,13 +18,13 @@ export class ChartForAdditives extends Component {
       return shot.arrayE
     })
     const allShotsMerged = [].concat.apply([], shotsList);
-    const additivesList = allShotsMerged.map((additive, index) => {
-      return(
-        <ul key={index}>
-          <li>{additive}</li>
-        </ul>
-      )
-    })
+    // const additivesList = allShotsMerged.map((additive, index) => {
+    //   return(
+    //     <ul key={index}>
+    //       <li>{additive}</li>
+    //     </ul>
+    //   )
+    // })
     // console.log('SHOTS in chartpage:',shotsList)
     console.log('ADDITIVES in chartpage:',allShotsMerged)
 
@@ -40,52 +40,52 @@ export class ChartForAdditives extends Component {
 
     return (
       <div>
-        <h1 style={{color:'green'}}>Ez listed:</h1>
+        <h1 style={{color:'green'}}>Your E-additives charted:</h1>
         {/* <ul>
           <li style={{marginLeft:'200px'}}>{additivesList}</li>
         </ul> */}
-        <ResponsiveContainer width="100%" height={250}>
-    <PieChart height={250}>
-      <Pie
-        data={dataToGraph}
-        cx="50%"
-        cy="50%"
-        outerRadius={100}
-        fill="#8884d8"
-        dataKey="value"
-        label={({
-          cx,
-          cy,
-          midAngle,
-          innerRadius,
-          outerRadius,
-          value,
-          index
-        }) => {
-          console.log("handling label?");
-          const RADIAN = Math.PI / 180;
-          // eslint-disable-next-line
-          const radius = 25 + innerRadius + (outerRadius - innerRadius);
-          // eslint-disable-next-line
-          const x = cx + radius * Math.cos(-midAngle * RADIAN);
-          // eslint-disable-next-line
-          const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-          return (
-            <text
-              x={x}
-              y={y}
+        <ResponsiveContainer width="100%" height={500}>
+          <PieChart height={500}>
+            <Pie
+              data={dataToGraph}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
               fill="#8884d8"
-              textAnchor={x > cx ? "start" : "end"}
-              dominantBaseline="central"
-            >
-              {dataToGraph[index].name} ({value})
-            </text>
-          );
-        }}
-      />
-    </PieChart>
-  </ResponsiveContainer>
+              dataKey="value"
+              label={({
+                cx,
+                cy,
+                midAngle,
+                innerRadius,
+                outerRadius,
+                value,
+                index
+              }) => {
+                console.log("handling label?");
+                const RADIAN = Math.PI / 180;
+                // eslint-disable-next-line
+                const radius = 25 + innerRadius + (outerRadius - innerRadius);
+                // eslint-disable-next-line
+                const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                // eslint-disable-next-line
+                const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+                return (
+                  <text
+                    x={x}
+                    y={y}
+                    fill="#8884d8"
+                    textAnchor={x > cx ? "start" : "end"}
+                    dominantBaseline="central"
+                  >
+                    {dataToGraph[index].name} ({value})
+                  </text>
+                );
+              }}
+            />
+          </PieChart>
+        </ResponsiveContainer>
       </div>
     );
   }
