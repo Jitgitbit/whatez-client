@@ -1,31 +1,32 @@
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-// import { signUp } from '../../store/actions/authActions';
-import { userSignUp } from "../../store/actions/authActions";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { userSignUp } from "../../actions/usersActions";
+// import { Card, Button, TextField } from "@material-ui/core";
 
 
-class SignUp extends Component {
+export class SignUpPage extends Component {
   state = {
     username: "",
     email: "",
     password: ""
   };
-  handleChange = (e) => {
-    console.log(e.target.value)
-    this.setState({
-      [e.target.id]: e.target.value
-    });
-  };
+
   handleSubmit = async event => {
     event.preventDefault();
     const { username, email, password } = this.state;
-    console.log("this.state", this.state);
+    console.log("this.state:", this.state);
 
     this.props.dispatch(userSignUp(username, email, password));
     this.clear();
     this.props.history.push("/login");
   };
+
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value             // !!! NOT .name  ,  event.target.id  !!!!  see in the Materialize rendered !!!!!
+    });
+  };
+
   clear = () => {
     this.setState({
       username: "",
@@ -33,11 +34,8 @@ class SignUp extends Component {
       password: ""
     });
   };
+
   render() {
-    // const {auth, authError} = this.props
-    const {user} = this.props
-    // if(auth.uid) return <Redirect to='/'/>
-    if(user.user) return <Redirect to='/'/>
     return (
       <div className='container'>
         <form onSubmit={this.handleSubmit} className="white">
@@ -60,27 +58,17 @@ class SignUp extends Component {
     {/* {authError ? <p>{authError}</p> : null} */}
             </div>
           </div>
-          {/* <button className="btn pink lighten-1 z-depth-0" onClick={() => this.props.history.push("/")}>Cancel</button> */}
+          <button className="btn pink lighten-1 z-depth-0" onClick={() => this.props.history.push("/")}>Cancel</button>
         </form>
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user
-    // auth: state.firebase.auth,
-    // authError: state.auth.authError
-  }
-}
-
-// const mapDispatchToProps = (dispatch) => {
+// const mapStateToProps = (state) => {
 //   return {
-//     signUp: (newUser) => dispatch(signUp(newUser))
+//     user: state.user
 //   }
 // }
 
-// export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
-export default connect(mapStateToProps)(SignUp);
-// export default connect()(SignUp);
+export default connect()(SignUpPage);

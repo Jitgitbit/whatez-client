@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch} from "react-router-dom";
 import { connect } from "react-redux";
 
-import HomePage from "./components/HomePage";
-import SignUpPage from "./components/SignUpPage";
-import LogInPage from "./components/LogInPage";
+import HomePage from "./components/layout/HomePage";
+import SignUpPage from "./components/auth/SignUpPage";
+import LogInPage from "./components/auth/LogInPage";
 import MainPageContainer from "./components/MainPage/MainPageContainer";
 import PhotoUploader from "./components/PhotoUploader";
 import ChartForAdditives from "./components/ChartForAdditives";

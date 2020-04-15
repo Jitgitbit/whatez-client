@@ -40,7 +40,9 @@ export class ChartForAdditives extends Component {
 
     return (
       <div>
-        <h1>Your E-additives charted:</h1>
+        <div className="container center">
+          <h2>Your E-additives chart:</h2>
+        </div>
         {/* <ul>
           <li style={{marginLeft:'200px'}}>{additivesList}</li>
         </ul> */}
@@ -51,7 +53,7 @@ export class ChartForAdditives extends Component {
               cx="50%"
               cy="50%"
               outerRadius={80}
-              fill="#8884d8"
+              fill="#000000"
               dataKey="value"
               label={({
                 cx,
@@ -75,7 +77,7 @@ export class ChartForAdditives extends Component {
                   <text
                     x={x}
                     y={y}
-                    fill="#8884d8"
+                    fill="#000000"
                     textAnchor={x > cx ? "start" : "end"}
                     dominantBaseline="central"
                   >
