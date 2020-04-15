@@ -12,7 +12,7 @@ function SignedInLinks(props) {
   // };
   return (
     <ul className='right'>
-      <li><NavLink to='/photo' className='btn btn-floating pink lighten-1'><i class="material-icons">add_a_photo</i></NavLink></li> 
+      <li><NavLink to='/photo' className='btn btn-floating pink lighten-1'><i className="material-icons">add_a_photo</i></NavLink></li> 
       <li><NavLink to="/chart">Your chart</NavLink></li> 
       <li><NavLink to="/info">Info</NavLink></li>
       {/* <li><Link to="/">Log out</Link></li> */}
