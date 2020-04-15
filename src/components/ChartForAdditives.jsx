@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { getShots } from "../actions/shotsActions";
 import { connect } from "react-redux";
-import PieChart from 'react-minimal-pie-chart';
-import Chart from 'chart.js';
-import Chartb from "./Chartb";
+import { ResponsiveContainer, PieChart, Pie } from "recharts";
 
 export class ChartForAdditives extends Component {
 
@@ -26,69 +24,68 @@ export class ChartForAdditives extends Component {
           <li>{additive}</li>
         </ul>
       )
-      // return additive;
     })
     // console.log('SHOTS in chartpage:',shotsList)
     console.log('ADDITIVES in chartpage:',allShotsMerged)
 
-    const randomColorOne = Math.floor(Math.random()*16777215).toString(16);
-    const randomColorTwo = Math.floor(Math.random()*16777215).toString(16);
+    const uniqueCount = allShotsMerged
 
-    // const dataForGraph = (allShotsMerged) => {
-  
-      var integerAmount = [];
-      for (var i in allShotsMerged) {
-          integerAmount.push(allShotsMerged[i].CaseNum);
-      }
-      var sum = integerAmount.reduce((a, b) => a + b, 0);
-      var categoryname = ["E528", "E300", "E450", "E500", "E224", "E330", "E202"];
-      var category = [];
-      var amount = [];
-      for (var i in allShotsMerged) {
-          category.push(categoryname[allShotsMerged[i].Category]);
-          amount.push (integerAmount[i]/sum*100+'%');
-      }
-      var config = {
-        type: 'pie',
-        data: {
-            datasets: [{
-                data: amount,
-                backgroundColor: [
-                    "rgba(59, 89, 152, 1)",
-                    "rgba(59, 89, 152, 1)",
-                    "rgba(59, 89, 152, 1)",
-                    "rgba(59, 89, 152, 1)",
-                    "rgba(59, 89, 152, 1)",
-                    "rgba(59, 89, 152, 1)",
-                    "rgba(59, 89, 152, 1)"
-                    ],
-                label: 'Dataset 1'
-            }],
-                labels: category
-        },
-        options: {
-            responsive: true
-        }
-    };
-    var ctx = ("#mycanvas");       
-    var graph = new Chart(ctx, config);
-    // }
+    var count = [];
+
+    uniqueCount.forEach(function(i) { count[i] = (count[i]||0) + 1;});
+    console.log(`count:`,count);
+
+    const dataToGraph = Object.keys(count).map(key => ({ name: key, value: count[key] }))
+    console.log(`dataToGraph:`,dataToGraph)
 
     return (
       <div>
         <h1 style={{color:'green'}}>Ez listed:</h1>
-        <ul>
-          {/* <li>{shotsList}</li> */}
+        {/* <ul>
           <li style={{marginLeft:'200px'}}>{additivesList}</li>
-          <PieChart
-          data={[
-            { title: 'One', value: 10, color: '#' + randomColorOne },
-            { title: 'Two', value: 15, color: '#' + randomColorTwo },
-            { title: 'Three', value: 20, color: '#6A2135' },
-          ]}
-          />
-        </ul>
-        <Chartb/>
+        </ul> */}
+        <ResponsiveContainer width="100%" height={250}>
+    <PieChart height={250}>
+      <Pie
+        data={dataToGraph}
+        cx="50%"
+        cy="50%"
+        outerRadius={100}
+        fill="#8884d8"
+        dataKey="value"
+        label={({
+          cx,
+          cy,
+          midAngle,
+          innerRadius,
+          outerRadius,
+          value,
+          index
+        }) => {
+          console.log("handling label?");
+          const RADIAN = Math.PI / 180;
+          // eslint-disable-next-line
+          const radius = 25 + innerRadius + (outerRadius - innerRadius);
+          // eslint-disable-next-line
+          const x = cx + radius * Math.cos(-midAngle * RADIAN);
+          // eslint-disable-next-line
+          const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+          return (
+            <text
+              x={x}
+              y={y}
+              fill="#8884d8"
+              textAnchor={x > cx ? "start" : "end"}
+              dominantBaseline="central"
+            >
+              {dataToGraph[index].name} ({value})
+            </text>
+          );
+        }}
+      />
+    </PieChart>
+  </ResponsiveContainer>
       </div>
     );
   }

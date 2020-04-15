@@ -1,8 +1,20 @@
-import React from "react";
 import { ResponsiveContainer, PieChart, Pie } from "recharts";
-import { Panel } from "react-bootstrap";
+// import { Panel } from "react-bootstrap";
+import React, { Component } from "react";
+import { getShots } from "../actions/shotsActions";
+import { connect } from "react-redux";
 
 const data = [{ name: "network 1", value: 2 }, { name: "network 3", value: 4 }];
+
+const uniqueCount = data
+
+var count = [];
+
+uniqueCount.forEach(function(i) { count[i] = (count[i]||0) + 1;});
+console.log(`count:`,count);
+
+const dataToGraph = Object.keys(count).map(key => ({ name: key, value: count[key] }))
+console.log(`dataToGraph:`,dataToGraph)
 
 export default ({ name }) =>
   <ResponsiveContainer width="100%" height={250}>
