@@ -31,74 +31,88 @@ class PhotoUploader extends React.Component {
 
   render() {
     console.log("props", this.props);
+    // return (
+      
+    //   <form onSubmit={this.onFormSubmit} method="POST" encType="multipart/form-data">
+    //     <h3>Img Upload</h3>
+    //     <input type="file" onChange={this.onChange} name="avatar"/>
+    //     <button type="submit">Upload</button>
+    //   </form>
+    //   <>
+    //     <Card
+    //       variant='elevation'
+    //       style={{
+    //         display: "flex",
+    //         flexDirection: "column",
+    //         padding: "30px",
+    //         width: "400px",
+    //         height: "200px"
+    //       }}
+    //     >
+    //       <h4>Img Upload</h4>
+    //       <form
+    //         noValidate
+    //         onSubmit={this.onFormSubmit}
+    //         method='POST'
+    //         encType='multipart/form-data'
+    //         style={{
+    //           display: "flex",
+    //           flexDirection: "column",
+    //           alignItems: "center"
+    //         }}
+    //       >
+    //         <TextField
+    //           onChange={this.onChange}
+    //           type='file'
+    //           name='avatar'
+    //           variant='filled'
+    //         />
+    //         <div style={{ display: "flex" }}>
+    //           <Button
+    //             variant='contained'
+    //             color='primary'
+    //             type='submit'
+    //             style={{
+    //               marginRight: "10px",
+    //               marginTop: "10px",
+    //               width: "100px"
+    //             }}
+    //           >
+    //             {/* <Link className="nav-link" to={`/main`} style={{color:"white", textDecoration:"none"}}> */}
+    //             Upload
+    //             {/* </Link> */}
+    //           </Button>
+    //           <Button
+    //             variant='contained'
+    //             style={{ marginTop: "10px", width: "100px" }}
+    //             // onClick={() => this.props.history.push("/main")}
+    //           >
+    //             <Link
+    //               className='nav-link'
+    //               to={`/main`}
+    //               style={{ color: "black", textDecoration: "none" }}
+    //             >
+    //               Cancel
+    //             </Link>
+    //           </Button>
+    //         </div>
+    //       </form>
+    //     </Card>
+    //   </>
+    // );
     return (
-      <div></div>
-      // <form onSubmit={this.onFormSubmit} method="POST" encType="multipart/form-data">
-      //   <h3>Img Upload</h3>
-      //   <input type="file" onChange={this.onChange} name="avatar"/>
-      //   <button type="submit">Upload</button>
-      // </form>
-      // <>
-      //   <Card
-      //     variant='elevation'
-      //     style={{
-      //       display: "flex",
-      //       flexDirection: "column",
-      //       padding: "30px",
-      //       width: "400px",
-      //       height: "200px"
-      //     }}
-      //   >
-      //     <h4>Img Upload</h4>
-      //     <form
-      //       noValidate
-      //       onSubmit={this.onFormSubmit}
-      //       method='POST'
-      //       encType='multipart/form-data'
-      //       style={{
-      //         display: "flex",
-      //         flexDirection: "column",
-      //         alignItems: "center"
-      //       }}
-      //     >
-      //       <TextField
-      //         onChange={this.onChange}
-      //         type='file'
-      //         name='avatar'
-      //         variant='filled'
-      //       />
-      //       <div style={{ display: "flex" }}>
-      //         <Button
-      //           variant='contained'
-      //           color='primary'
-      //           type='submit'
-      //           style={{
-      //             marginRight: "10px",
-      //             marginTop: "10px",
-      //             width: "100px"
-      //           }}
-      //         >
-      //           {/* <Link className="nav-link" to={`/main`} style={{color:"white", textDecoration:"none"}}> */}
-      //           Upload
-      //           {/* </Link> */}
-      //         </Button>
-      //         <Button
-      //           variant='contained'
-      //           style={{ marginTop: "10px", width: "100px" }}
-      //           // onClick={() => this.props.history.push("/main")}
-      //         >
-      //           <Link
-      //             className='nav-link'
-      //             to={`/main`}
-      //             style={{ color: "black", textDecoration: "none" }}
-      //           >
-      //             Cancel
-      //           </Link>
-      //         </Button>
-      //       </div>
-      //     </form>
-      //   </Card>
-      // </>
+      <div className='container'>
+        <form onSubmit={this.onFormSubmit} method="POST" encType="multipart/form-data" className="white">
+          <h5 className="grey-text text-darken-3">Upload Photo</h5>
+          <h6 className="grey-text text-darken-3">On completion of text-extraction, you will be redirected to your chart automatically</h6>
+          <div className="input-field">
+            <input type="file" onChange={this.onChange} name="avatar"/>
+          </div>
+          <div className="input-field">
+            <button type="submit" className="btn pink lighten-1 z-depth-0">Upload</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

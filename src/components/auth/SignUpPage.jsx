@@ -58,7 +58,7 @@ export class SignUpPage extends Component {
     {/* {authError ? <p>{authError}</p> : null} */}
             </div>
           </div>
-          <button className="btn pink lighten-1 z-depth-0" onClick={() => this.props.history.push("/")}>Cancel</button>
+          {/* <button className="btn pink lighten-1 z-depth-0" onClick={() => this.props.history.push("/")}>Cancel</button> */}
         </form>
       </div>
     )
