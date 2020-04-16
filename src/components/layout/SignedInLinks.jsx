@@ -10,8 +10,13 @@ function SignedInLinks(props) {
   //     type: "CLEAR_USER_DATA"
   //   });
   // };
+  const {user} = props
+  console.log(`user status:`, user)
+  // const identification = user.user ? <Link to='/info'>{user.user.email}</Link> : <Link to='/info'>no login</Link>
   return (
     <ul className='right'>
+      {/* <li>{identification}</li> */}
+      <li>someEmail@gmail.com</li>
       <li><NavLink to='/photo' className='btn btn-floating pink lighten-1'><i className="material-icons">add_a_photo</i></NavLink></li> 
       <li><NavLink to="/chart">Your chart</NavLink></li> 
       <li><NavLink to="/info">Info</NavLink></li>
