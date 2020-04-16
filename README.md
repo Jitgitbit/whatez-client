@@ -2,6 +2,8 @@
 
 <img width="1792" alt="Screenshot 2020-04-16 at 11 43 09" src="https://user-images.githubusercontent.com/51092100/79442412-cc91eb80-7fd8-11ea-9ebe-b88c7f26e0d3.png">
 
+<img width="1792" alt="Screenshot 2020-04-16 at 11 43 27" src="https://user-images.githubusercontent.com/51092100/79442544-f8ad6c80-7fd8-11ea-9846-6dfcc6333029.png">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
