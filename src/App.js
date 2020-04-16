@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 import { connect } from "react-redux";
 
 import HomePage from "./components/layout/HomePage";
@@ -19,7 +19,6 @@ export class App extends Component {
   
   render() {
     return (
-        <BrowserRouter>
           <div className="App">
             <NavBar/>
             <Switch>
@@ -33,7 +32,6 @@ export class App extends Component {
               <Route exact path="/chart" component={ChartForAdditives}/>
             </Switch>
           </div>
-        </BrowserRouter>
     );
   }
 }
