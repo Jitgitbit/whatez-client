@@ -1,8 +1,7 @@
 import { SIGNUP_SUCCES, LOGIN_SUCCES, LOGOUT_USER } from "../actions/usersActions";
 
 const initialState = {
-  //   users: [],
-  user: null
+  // user: null
 };
 
 export default (state = initialState, { type, payload }) => {

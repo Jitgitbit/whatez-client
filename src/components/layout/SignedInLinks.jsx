@@ -23,11 +23,11 @@ function SignedInLinks(props) {
   const identification = user.user ? <Link to='/info'>{user.user.email}</Link> : <Link to='/info'>nono</Link>
   return (
     <ul className='right'>
-      <li>{identification}</li>
+      <li><a onClick={handleLogOut}>{identification}</a></li>
       <li><NavLink to='/photo' className='btn btn-floating pink lighten-1'><i className="material-icons">add_a_photo</i></NavLink></li> 
       <li><NavLink to="/chart">Your chart</NavLink></li> 
       <li><NavLink to="/info">Info</NavLink></li>
-      <li><a onClick={handleLogOut}>Log Out</a></li>
+      <li></li>
     </ul>
   )
 }
