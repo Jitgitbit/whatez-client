@@ -11,11 +11,12 @@ export class ChartForAdditives extends Component {
   }
   
   render() {
-    // console.log('SHOTS in chartpage:',this.props.shots)
     const allShotsRaw = this.props.shots;
-    const shotsList = allShotsRaw.map((shot, key) => {
-     
-      return shot.arrayE
+
+    const allShotsFiltered = allShotsRaw.filter(shot => shot.userId === this.props.user.id)
+    
+    const shotsList = allShotsFiltered.map((shot) => {
+        return shot.arrayE
     })
     const allShotsMerged = [].concat.apply([], shotsList);
     // const additivesList = allShotsMerged.map((additive, index) => {
@@ -26,11 +27,11 @@ export class ChartForAdditives extends Component {
     //   )
     // })
     // console.log('SHOTS in chartpage:',shotsList)
-    console.log('ADDITIVES in chartpage:',allShotsMerged)
+    console.log('ALL SHOTS MERGED:',allShotsMerged)
 
     const uniqueCount = allShotsMerged
 
-    var count = [];
+    const count = [];
 
     uniqueCount.forEach(function(i) { count[i] = (count[i]||0) + 1;});
     console.log(`count:`,count);

@@ -1,6 +1,7 @@
 import axios from "axios";
 export const LOGIN_SUCCES = "LOGIN_SUCCES";
 export const SIGNUP_SUCCES = "SIGNUP_SUCCES";
+export const LOGOUT_USER = "LOGOUT_USER";
 
 function loginSucces(resp) {
   const { id, token, username, email } = resp;
@@ -63,5 +64,11 @@ export function userSignUp(username, email, password) {
       .post("http://localhost:5000/user/signup", { username, email, password })
       .then(resp => dispatch(signUpSucess(resp.data)))
       .catch(error => console.error("error", error));
+  };
+}
+
+export function logOut() {
+  return {
+    type: LOGOUT_USER
   };
 }

@@ -1,5 +1,4 @@
-import { LOGIN_SUCCES } from "../actions/usersActions";
-import { SIGNUP_SUCCES } from "../actions/usersActions";
+import { SIGNUP_SUCCES, LOGIN_SUCCES, LOGOUT_USER } from "../actions/usersActions";
 
 const initialState = {
   //   users: [],
@@ -16,6 +15,10 @@ export default (state = initialState, { type, payload }) => {
     case 'SIGNOUT_SUCCESS':
       console.log(`================>> SIGNOUT SUCCESS`)
       return state;
+    case LOGOUT_USER:
+      return {
+        user: {}
+      };
     default:
       return state;
   }

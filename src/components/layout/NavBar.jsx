@@ -8,7 +8,7 @@ function NavBar(props) {
   const {user} = props
   
   console.log(`user status:`, user)
-  const links = user.user ? <SignedInLinks/> : <SignedOutLinks/>
+  const links = user.user.token ? <SignedInLinks/> : <SignedOutLinks/>
   return (
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
