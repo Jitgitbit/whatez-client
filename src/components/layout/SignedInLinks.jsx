@@ -1,18 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOut } from "../../actions/usersActions";
-
-// import { useDispatch } from "react-redux";
-
     
 function SignedInLinks(props) {
-  // const dispatch = useDispatch();
-  // const handleLogout = () => {
-  //   dispatch({
-  //     type: "CLEAR_USER_DATA"
-  //   });
-  // };
+  
   const handleLogOut = () => {
     props.dispatch(logOut());
   };
