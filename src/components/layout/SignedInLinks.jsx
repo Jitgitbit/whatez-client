@@ -7,7 +7,10 @@ import { logOut } from "../../actions/usersActions";
 function SignedInLinks(props) {
   
   const handleLogOut = () => {
+    console.log(`props are:`,props)
+    // alert('you logged out')
     props.dispatch(logOut());
+    // history.push('/')
   };
 
   const {user} = props

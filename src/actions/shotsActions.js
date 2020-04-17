@@ -37,7 +37,6 @@ export const getShots = () => {
   return async function(dispatch, getState) {
     axios
       .get("/shots")
-      // .get("http://localhost:4000/shots?page=1&limit=3")
       .then(resp => {
         dispatch(fetchShotSuccess(resp.data));
         console.log("GET ALL SHOTS DATA SUCCESSFULL: ", resp.data);

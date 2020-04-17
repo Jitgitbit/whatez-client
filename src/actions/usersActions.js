@@ -5,9 +5,7 @@ export const LOGOUT_USER = "LOGOUT_USER";
 
 function loginSucces(resp) {
   const { id, token, username, email } = resp;
-  console.log(`
-  --  LOG IN SUCCESS  --
-  `);
+  console.log(`--  LOG IN SUCCESS  --`);
   return {
     type: LOGIN_SUCCES,
     payload: {
@@ -18,32 +16,23 @@ function loginSucces(resp) {
     }
   };
 }
-
 export function userLogin(email, password, history) {
-  console.log(`
-  --  LOGGING IN  --
-  `,
-    email,
-    password
-  );
-
+  // console.log(`--  LOGGING IN  --`, email, password);
   return (dispatch, getState) => {
     axios
       .post("http://localhost:5000/user/login", { email, password })
       .then(resp => {
         dispatch(loginSucces(resp.data));
         history.push("/info");
-        console.log("LOGIN SUCCESSFUL");
+        // console.log("LOGIN SUCCESSFUL");
       })
       .catch(error => console.error("error", error));
   };
 }
 
-function signUpSucess(resp) {
+function signUpSuccess(resp) {
   const { password, username, email } = resp;
-  console.log(`
-  --  SIGN UP SUCCESS  --
-  `);
+  console.log(`--  SIGN UP SUCCESS  --`);
   return {
     type: SIGNUP_SUCCES,
     payload: {
@@ -53,16 +42,12 @@ function signUpSucess(resp) {
     }
   };
 }
-
 export function userSignUp(username, email, password) {
-  console.log(`
-  --  SIGNING UP  --
-  `);
-
+  // console.log(`--  SIGNING UP  --`);
   return (dispatch, getState) => {
     axios
       .post("http://localhost:5000/user/signup", { username, email, password })
-      .then(resp => dispatch(signUpSucess(resp.data)))
+      .then(resp => dispatch(signUpSuccess(resp.data)))
       .catch(error => console.error("error", error));
   };
 }

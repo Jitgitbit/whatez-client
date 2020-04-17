@@ -6,7 +6,7 @@ export default class AdditivesCategory extends Component {
     additivesCategory: null
   }
   componentDidMount(){
-    console.log(`=========>> PROPS IN Category:`,this.props)
+    console.log(`=========>> PROPS in Category:`,this.props)
 
     let specificId = this.props.match.params.additivesCategory_id    
     
