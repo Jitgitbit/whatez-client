@@ -73,7 +73,7 @@ export class ChartForAdditives extends Component {
                 const x = cx + radius * Math.cos(-midAngle * RADIAN);
                 // eslint-disable-next-line
                 const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
+                
                 return (
                   <text
                     x={x}
