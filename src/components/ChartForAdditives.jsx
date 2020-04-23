@@ -39,6 +39,8 @@ export class ChartForAdditives extends Component {
     const dataToGraph = Object.keys(count).map(key => ({ name: key, value: count[key] }))
     console.log(`dataToGraph:`,dataToGraph)
 
+    // const actualPie = document.addEventListener('DOMContentLoaded', () => {})
+
     return (
       <div>
         <div className="container center">
@@ -49,44 +51,47 @@ export class ChartForAdditives extends Component {
         </ul> */}
         <ResponsiveContainer width="100%" height={500}>
           <PieChart height={500}>
-            <Pie
-              data={dataToGraph}
-              cx="50%"
-              cy="50%"
-              outerRadius={80}
-              fill="#000000"
-              dataKey="value"
-              label={({
-                cx,
-                cy,
-                midAngle,
-                innerRadius,
-                outerRadius,
-                value,
-                index
-              }) => {
-                console.log("handling label?");
-                const RADIAN = Math.PI / 180;
-                // eslint-disable-next-line
-                const radius = 25 + innerRadius + (outerRadius - innerRadius);
-                // eslint-disable-next-line
-                const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                // eslint-disable-next-line
-                const y = cy + radius * Math.sin(-midAngle * RADIAN);
-                
-                return (
-                  <text
-                    x={x}
-                    y={y}
-                    fill="#000000"
-                    textAnchor={x > cx ? "start" : "end"}
-                    dominantBaseline="central"
-                  >
-                    {dataToGraph[index].name} ({value})
-                  </text>
-                );
-              }}
-            />
+            
+                <Pie
+                  data={dataToGraph}
+                  isAnimationActive={false}
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={80}
+                  fill="#000000"
+                  dataKey="value"
+                  label={({
+                    cx,
+                    cy,
+                    midAngle,
+                    innerRadius,
+                    outerRadius,
+                    value,
+                    index
+                  }) => {
+                    console.log("handling label?");
+                    const RADIAN = Math.PI / 180;
+                    // eslint-disable-next-line
+                    const radius = 25 + innerRadius + (outerRadius - innerRadius);
+                    // eslint-disable-next-line
+                    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                    // eslint-disable-next-line
+                    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                    
+                    return (
+                      <text
+                        x={x}
+                        y={y}
+                        fill="#000000"
+                        textAnchor={x > cx ? "start" : "end"}
+                        dominantBaseline="central"
+                      >
+                        {dataToGraph[index].name} ({value})
+                      </text>
+                    );
+                  }}
+                />
+              
           </PieChart>
         </ResponsiveContainer>
       </div>
