@@ -57,7 +57,7 @@ export class ChartForAdditives extends Component {
                   isAnimationActive={false}
                   cx="50%"
                   cy="50%"
-                  outerRadius={80}
+                  outerRadius={180}
                   fill="#000000"
                   dataKey="value"
                   label={({
