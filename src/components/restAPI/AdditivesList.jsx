@@ -11,7 +11,7 @@ export default function AdditivesList(props) {
             <Link to={'/additives/' + additive.code}>
               <span className="card-title red-text">E {additive.code}'s</span>
             </Link>
-            <span className="right black-text">name: {additive.name}</span>
+            <span className="right black-text">{additive.name}</span>
           </div>
         </div>
       )

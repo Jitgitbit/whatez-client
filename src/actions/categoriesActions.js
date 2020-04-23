@@ -25,7 +25,6 @@ function showOneCategorySuccess(category) {
     payload: category
   };
 }
-
 export const showOneCategory = id => {
   return async function(dispatch, getState) {
     await axios(`/categories/${id}`)
