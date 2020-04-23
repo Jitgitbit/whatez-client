@@ -28,7 +28,7 @@ function SignedInLinks(props) {
   )
 }
 const mapStateToProps = (state) => {
-  console.log(`state in here:`,state)
+  // console.log(`state in here:`,state)
   return {
     user: state.user
   }

@@ -30,7 +30,6 @@ export const showOneCategory = id => {
   return async function(dispatch, getState) {
     await axios(`/categories/${id}`)
       .then(response => {
-        console.log("================>>  response.data.category @category action", response);
         dispatch(showOneCategorySuccess(response.data));
       })
       .catch(console.error);
