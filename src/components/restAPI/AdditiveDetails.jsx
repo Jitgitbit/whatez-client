@@ -11,9 +11,11 @@ export default function CategoryDetails(props) {
         <br></br>
         <p>name: {props.additive.name}</p>
         <p>function: {props.additive.function}</p>
-        {/* <p>{props.additive.foods}</p> */}
+        <p>food: {props.additive.foods}</p>
+        <p>notice: {props.additive.notice}</p>
+        <p>info: {props.additive.info}</p>
         <br></br>
-        <button className="btn pink lighten-1 z-depth-0"><NavLink to="/info" style={{color:'white'}}>back to categories</NavLink></button>
+        <button className="btn pink lighten-1 z-depth-0"><NavLink to="/additives" style={{color:'white'}}>back to list</NavLink></button>
         <br></br>
       </div>
     </div>
