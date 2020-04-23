@@ -11,6 +11,7 @@ import ChartForAdditives from "./components/ChartForAdditives";
 import AdditivesCategories from "./components/REST/AdditivesCategories";
 import AdditivesCategory from "./components/REST/AdditivesCategory";
 import NavBar from "./components/layout/NavBar";
+import YoutubePlayer from "./components/player/YoutubePlayer";
 
 // const baseUrl = "http://localhost:5000";
 
@@ -28,6 +29,7 @@ export class App extends Component {
               <Route exact path="/info" component={AdditivesCategories}/>
               <Route exact path="/photo" component={PhotoUploader}/>
               <Route exact path="/chart" component={ChartForAdditives}/>
+              <Route exact path="/player" component={YoutubePlayer}/>
             </Switch>
           </div>
     );

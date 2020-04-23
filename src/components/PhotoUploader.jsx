@@ -19,6 +19,7 @@ class PhotoUploader extends React.Component {
 
     this.props.createShot(formData, this.props.history);
     console.log(`PROPS HERE ARE:`, this.props);
+    this.props.history.push('/player');
   }
 
   onChange(e) {

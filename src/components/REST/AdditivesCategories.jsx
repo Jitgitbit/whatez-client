@@ -24,7 +24,7 @@ export default class AdditivesCategories extends Component {
       "x-rapidapi-key":"592be0ac5emsh1f2a31abf42d2e4p15ee76jsnf519e97b2684",          // CORS Policy messing it up. Sometimes fetching, sometimes not.
       // 'Access-Control-Allow-Origin': '*'
       },"params":{
-      "sort":"name"
+      "sort asc":"id"
       }
       })
       .then(response => {
