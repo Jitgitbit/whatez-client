@@ -59,6 +59,7 @@ export class ChartForAdditives extends Component {
                   cy="50%"
                   outerRadius={180}
                   fill="#000000"
+                  paddingAngle={3}
                   dataKey="value"
                   label={({
                     cx,
