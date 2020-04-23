@@ -8,12 +8,11 @@ import SignUpPage from "./components/auth/SignUpPage";
 import LogInPage from "./components/auth/LogInPage";
 import PhotoUploader from "./components/PhotoUploader";
 import ChartForAdditives from "./components/ChartForAdditives";
-// import AdditivesCategories from "./components/restAPI/AdditivesCategories";
-// import AdditivesCategory from "./components/restAPI/AdditivesCategory";
 import NavBar from "./components/layout/NavBar";
 import YoutubePlayer from "./components/player/YoutubePlayer";
 import CategoriesContainer from "./components/restAPI/CategoriesContainer";
 import CategoryContainer from "./components/restAPI/CategoryContainer";
+import AdditivesContainer from "./components/restAPI/AdditivesContainer";
 
 // const baseUrl = "http://localhost:5000";
 
@@ -28,8 +27,8 @@ export class App extends Component {
               <Route exact path="/signup" component={SignUpPage} />
               <Route exact path="/login" component={LogInPage} />
               <Route exact path="/info/:id" component={CategoryContainer}/>
-              {/* <Route exact path="/info" component={AdditivesCategories}/> */}
               <Route exact path="/info" component={CategoriesContainer}/>
+              <Route exact path="/additives" component={AdditivesContainer}/>
               <Route exact path="/photo" component={PhotoUploader}/>
               <Route exact path="/chart" component={ChartForAdditives}/>
               <Route exact path="/player" component={YoutubePlayer}/>
