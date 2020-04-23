@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import AdditiveDetails from "./CategoryDetails";
+import AdditiveDetails from "./AdditiveDetails";
 import { showOneAdditive } from "../../actions/additivesActions";
 
 class AdditiveContainer extends Component {

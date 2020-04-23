@@ -18,10 +18,10 @@ export const showAllAdditives = () => {
   };
 };
 
-function showOneAdditiveSuccess(category) {
+function showOneAdditiveSuccess(additive) {
   return {
     type: SHOW_ONE_ADDITIVE,
-    payload: category
+    payload: additive
   };
 }
 export const showOneAdditive = code => {
