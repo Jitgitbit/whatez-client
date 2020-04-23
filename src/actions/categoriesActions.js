@@ -1,20 +1,38 @@
 import axios from "../axios";
 
 export const All_CATEGORIES = "All_CATEGORIES";
+export const SHOW_ONE_CATEGORY = "SHOW_ONE_CATEGORY";
 
 
-function showAllCategoriesSuccess(category) {
+function showAllCategoriesSuccess(categories) {
   return {
     type: All_CATEGORIES,
+    payload: categories
+  };
+}
+export const showAllCategories = () => {
+  return async function(dispatch, getState) {
+    const response = await axios(`/categories`);
+    console.log("==================>>>  response.data @categoriesAction", response.data);
+    dispatch(showAllCategoriesSuccess(response.data));
+  };
+};
+
+
+function showOneCategorySuccess(category) {
+  return {
+    type: SHOW_ONE_CATEGORY,
     payload: category
   };
 }
 
-export const showAllCategories = () => {
+export const showOneCategory = id => {
   return async function(dispatch, getState) {
-    console.log("getState() @categoriesAction", getState());
-    const response = await axios(`/categories`);
-    console.log("response.data.category @categoriesAction", response.data);
-    dispatch(showAllCategoriesSuccess(response.data));
+    await axios(`/categories/${id}`)
+      .then(response => {
+        console.log("================>>  response.data.category @category action", response);
+        dispatch(showOneCategorySuccess(response.data));
+      })
+      .catch(console.error);
   };
 };

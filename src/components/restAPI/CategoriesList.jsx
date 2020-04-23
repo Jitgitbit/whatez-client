@@ -18,7 +18,7 @@ export default function CategoriesList(props) {
       )
     })
   ) : (
-    <div className="center">No additive categories loaded yet</div>
+    <h1 className="center">Loading additives categories...</h1>
   )
   return (
     <div>
