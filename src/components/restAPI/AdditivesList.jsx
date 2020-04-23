@@ -9,7 +9,7 @@ export default function AdditivesList(props) {
         <div className="additivesCategory card teal lighten-5" key={additive.code}>
           <div className="card-content ">
             <Link to={'/additives/' + additive.code}>
-              <span className="card-title red-text">E {additive.code}'s</span>
+              <span className="card-title red-text">E {additive.code}</span>
             </Link>
             <span className="right black-text">{additive.name}</span>
           </div>
