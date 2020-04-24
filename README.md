@@ -15,7 +15,33 @@ Some quick screenshots:
 ![image](https://user-images.githubusercontent.com/51092100/80215613-12842a80-863d-11ea-9c4b-95499095a6e0.png)
 ![image](https://user-images.githubusercontent.com/51092100/80215630-1a43cf00-863d-11ea-808c-5b7f7e8c0cfe.png)
 
+Technologies used:
 
+Client-side:
+- JavaScript
+- React.js
+- Redux
+- Axios
+- Recharts
+
+Server-side:
+https://github.com/Jitgitbit/whatez-server
+- JavaScript
+- Node.js
+- Sequelize
+- Express
+- Tesseract.js
+- Multer
+- JSONwebtoken
+- bcrypt
+- regex
+- ejs
+- fs
+- PostgresQL
+
+Some more info:
+I explained most about the app in the video, which is slightly outdated now, as v1.0 of my app is now completely finished.
+The next step will be developing a mobile version for the client-side and deploying it. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
