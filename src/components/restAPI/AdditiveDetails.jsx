@@ -11,6 +11,7 @@ export default function CategoryDetails(props) {
         <br></br>
         <h5>name</h5><p> {props.additive.name}</p>
         <h5>function</h5><p> {props.additive.function}</p>
+        <h5>status</h5><p className='red-text'> {props.additive.status}</p>
         <h5>food examples</h5><p> {props.additive.foods}</p>
         <h5>notice</h5><p className='red-text'> {props.additive.notice}</p>
         <h5>extra info</h5><p> {props.additive.info}</p>
